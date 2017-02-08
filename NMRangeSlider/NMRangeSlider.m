@@ -233,7 +233,7 @@ NSUInteger DeviceSystemMajorVersion() {
 //ON-Demand images. If the images are not set, then the default values are loaded.
 
 - (UIImage *)imageFromBundle:(NSString*)imageName {
-    NSBundle* bundle = [NSBundle bundleForClass:[NMRangeSlider class]];
+    NSBundle* bundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[NMRangeSlider class]] pathForResource:@"NMRangeSlider Resources" ofType:@"bundle"]];
     NSString *imagePath = [bundle pathForResource:imageName ofType:@"png"];
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     return image;
